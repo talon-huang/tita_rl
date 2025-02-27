@@ -11,7 +11,7 @@ class LeggedRobotCfg(BaseConfig):
 
         num_observations = n_proprio + n_scan + history_len*n_proprio + n_priv_latent 
         num_privileged_obs = None # if not None a priviledge_obs_buf will be returned by step() (critic obs for assymetric training). None is returned otherwise 
-        num_actions = 8
+        num_actions = 12
         env_spacing = 3.  # not used with heightfields/trimeshes 
         send_timeouts = True # send time out information to the algorithm
         episode_length_s = 20 # episode length in seconds
@@ -125,7 +125,7 @@ class LeggedRobotCfg(BaseConfig):
         fix_base_link = False  # fixe the base of the robot
         default_dof_drive_mode = 3  # see GymDofDriveModeFlags (0 is none, 1 is pos tgt, 2 is vel tgt, 3 effort)
         self_collisions = 0  # 1 to disable, 0 to enable...bitwise filter
-        replace_cylinder_with_capsule = False  # replace collision cylinders with capsules, leads to faster/more stable simulation
+        replace_cylinder_with_capsule = True  # replace collision cylinders with capsules, leads to faster/more stable simulation
         flip_visual_attachments = True  # Some .obj meshes must be flipped from y-up to z-up
 
         density = 0.001
@@ -163,8 +163,8 @@ class LeggedRobotCfg(BaseConfig):
     class rewards:
         class scales:
             termination = -0.0
-            tracking_lin_vel = 1.0
-            tracking_ang_vel = 0.5
+            tracking_lin_vel = 0.6
+            tracking_ang_vel = 0.3
             lin_vel_z = -2.0
             ang_vel_xy = -0.05
             orientation = -0.
@@ -188,7 +188,8 @@ class LeggedRobotCfg(BaseConfig):
 
     class normalization:
         class obs_scales:
-            lin_vel = 2.0
+            # lin_vel = 1.0
+            lin_vel = 1.0
             ang_vel = 0.25
             dof_pos = 1.0
             dof_vel = 0.05
