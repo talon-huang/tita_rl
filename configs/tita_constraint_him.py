@@ -102,7 +102,7 @@ class TitaConstraintHimRoughCfg( LeggedRobotCfg ):
     class asset( LeggedRobotCfg.asset ):
         # file = '{ROOT_DIR}/resources/go2/tita/tita_description.urdf'
 
-        file = '{ROOT_DIR}/resources/go2/tita/tita_description_v1.urdf'
+        file = '{ROOT_DIR}/resources/titati/urdf/titati_description.urdf'
         foot_name = "leg_4"
         name = "go2"
         penalize_contacts_on = ["leg_3"]
@@ -245,7 +245,7 @@ class TitaConstraintHimRoughCfgPPO( LeggedRobotCfgPPO ):
       
     class runner( LeggedRobotCfgPPO.runner ):
         run_name = 'test_barlowtwins_feetcontact'
-        experiment_name = 'rough_go2_constraint'
+        experiment_name = 'rough_tita_constraint'
         policy_class_name = 'ActorCriticBarlowTwins'
         # policy_class_name = 'ActorCriticTransBarlowTwins'
         runner_class_name = 'OnConstraintPolicyRunner'

@@ -1,11 +1,11 @@
 *.pyc
 logs/
-*.pt
-*.mp4
+# *.pt
+# *.mp4
 *.json
 *.engine
 *.onnx
-.vsode/
+.vscode/
 configs/__pycache__/
 runner/__pycache__/
 modules/__pycache__/
@@ -13,12 +13,4 @@ utils/__pycache__/
 envs/__pycache__/
 algorithm/__pycache__/
 __pycache__/
-
 **/__pycache__/
-# 忽略所有 .dae 文件
-*.dae
-resources/go2/a1/meshes/*.dae
-resources/titati_urdf/meshes/dae/*.dae
-
-# resources/go2/tita/dae/*
-# resources/go2/
