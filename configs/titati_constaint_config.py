@@ -30,7 +30,7 @@
 
 from configs.legged_robot_config import LeggedRobotCfg, LeggedRobotCfgPPO
 
-class Go2ConstraintHimRoughCfg( LeggedRobotCfg ):
+class TitatiConstraintHimRoughCfg( LeggedRobotCfg ):
     class env(LeggedRobotCfg.env):
         num_envs = 4096
 
@@ -309,7 +309,7 @@ class Go2ConstraintHimRoughCfg( LeggedRobotCfg ):
         measure_heights = True
         include_act_obs_pair_buf = False
 
-class Go2ConstraintHimRoughCfgPPO( LeggedRobotCfgPPO ):
+class TitatiConstraintHimRoughCfgPPO( LeggedRobotCfgPPO ):
     class algorithm( LeggedRobotCfgPPO.algorithm ):
         entropy_coef = 0.01
         learning_rate = 1.e-3
