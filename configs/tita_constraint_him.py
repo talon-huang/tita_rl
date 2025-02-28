@@ -102,7 +102,7 @@ class TitaConstraintHimRoughCfg( LeggedRobotCfg ):
     class asset( LeggedRobotCfg.asset ):
         # file = '{ROOT_DIR}/resources/go2/tita/tita_description.urdf'
 
-        file = '{ROOT_DIR}/resources/go2/tita/tita_description_v1.urdf'
+        file = '{ROOT_DIR}/resources/tita/urdf/tita_description.urdf'
         foot_name = "leg_4"
         name = "go2"
         penalize_contacts_on = ["leg_3"]
