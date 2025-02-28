@@ -45,7 +45,7 @@
       <!-- <material name="black"/> -->
       <origin rpy="-1.5707963 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/base_link.STL"/>
+        <mesh filename="../meshes/base_link.STL"/>
       </geometry>
 
     </visual>
@@ -105,7 +105,7 @@
     <visual>
       <origin rpy="1.57 0 0" xyz="0 0 0"/>
       <geometry>
-         <mesh filename="meshes/left_leg_1.STL"/>
+         <mesh filename="../meshes/left_leg_1.STL"/>
       </geometry>
       <!-- <material name="black"/> -->
     </visual>
@@ -126,7 +126,7 @@
     <visual>
       <origin rpy="-1.5707963 0 0" xyz="0 0 0"/>
       <geometry>
-         <mesh filename="meshes/left_leg_2.STL"/>
+         <mesh filename="../meshes/left_leg_2.STL"/>
       </geometry>
     </visual>
     <!-- <visual>
@@ -159,7 +159,7 @@
     <visual>
       <origin rpy="-1.5707963 0 0" xyz="0 0 0"/>
       <geometry>
-         <mesh filename="meshes/left_leg_3.STL"/>
+         <mesh filename="../meshes/left_leg_3.STL"/>
       </geometry>
       <!-- <origin rpy="0 0 -0.131" xyz="0.1 0.021 -0.002"/>
       <geometry>
@@ -190,7 +190,7 @@
     <visual>
       <origin rpy="-1.5707963 0 0" xyz="0 0 0"/>
       <geometry>
-         <mesh filename="meshes/left_leg_4.STL"/>
+         <mesh filename="../meshes/left_leg_4.STL"/>
       </geometry>
       <!-- <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -221,7 +221,7 @@
     <visual>
       <origin rpy="1.5707963 0 0" xyz="0 0 0"/>
       <geometry>
-         <mesh filename="meshes/right_leg_1.STL"/>
+         <mesh filename="../meshes/right_leg_1.STL"/>
       </geometry>
       <!-- <material name="black"/> -->
     </visual>
@@ -242,7 +242,7 @@
     <visual>
       <origin rpy="-1.5707963 0 0" xyz="0 0 0"/>
       <geometry>
-         <mesh filename="meshes/right_leg_2.STL"/>
+         <mesh filename="../meshes/right_leg_2.STL"/>
       </geometry>
     </visual>
     <!-- <visual>
@@ -275,7 +275,7 @@
     <visual>
       <origin rpy="-1.5707963 0 0" xyz="0 0 0"/>
       <geometry>
-         <mesh filename="meshes/right_leg_3.STL"/>
+         <mesh filename="../meshes/right_leg_3.STL"/>
       </geometry>
       <!-- <origin rpy="0 0 -0.131" xyz="0.1 0.021 -0.002"/>
       <geometry>
@@ -306,7 +306,7 @@
     <visual>
       <origin rpy="-1.5707963 0 0" xyz="0 0 0"/>
       <geometry>
-         <mesh filename="meshes/right_leg_4.STL"/>
+         <mesh filename="../meshes/right_leg_4.STL"/>
       </geometry>
       <!-- <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
