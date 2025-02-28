@@ -60,34 +60,7 @@ class LeggedRobot(BaseTask):
 
     #------------ enviorment core ----------------
     def _init_buffers(self):
-        """ Initialize torch tensors which will contain simulation states and processed quantities
-            isaac gym order:
-                0 FL_hip_joint 3
-                1 FL_thigh_joint 4
-                2 FL_calf_joint 5
-                3 FR_hip_joint 0 
-                4 FR_thigh_joint 1
-                5 FR_calf_joint 2 
-                6 RL_hip_joint 9 
-                7 RL_thigh_joint 10
-                8 RL_calf_joint 11
-                9 RR_hip_joint 6 
-                10 RR_thigh_joint 7
-                11 RR_calf_joint 8
-            unitree go2 sdk order:
-                3 FR_hip_joint 0
-                4 FR_thigh_joint 1
-                5 FR_calf_joint 2
-                0 FL_hip_joint 3
-                1 FL_thigh_joint 4
-                2 FL_calf_joint 5
-                9 RR_hip_joint 6
-                10 RR_thigh_joint 7
-                11 RR_calf_joint 8
-                6 RL_hip_joint 9
-                7 RL_thigh_joint 10
-                8 RL_calf_joint 11
-        """
+
   
         # get gym GPU state tensors
         actor_root_state = self.gym.acquire_actor_root_state_tensor(self.sim)

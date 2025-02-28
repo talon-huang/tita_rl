@@ -42,21 +42,7 @@ class TitaConstraintHimRoughCfg( LeggedRobotCfg ):
 
     class init_state( LeggedRobotCfg.init_state ):
         pos = [0.0, 0.0, 0.34] # x,y,z [m]
-        """
-          unitree go2 sdk order:
-               -0.1 <-3 FR_hip_joint 0 -> 0.0
-               0.8 <- 4 FR_thigh_joint 1 -> 0.9
-               -1.5 <- 5 FR_calf_joint 2 -> -1.8
-               0.1 <- 0 FL_hip_joint 3 -> 0.0
-               0.8 <- 1 FL_thigh_joint 4 -> 0.9
-               -1.5 <- 2 FL_calf_joint 5 -> -1.8
-               -0.1 <- 9 RR_hip_joint 6 -> 0.0
-               1 <- 10 RR_thigh_joint 7 -> 0.9
-               -1.5 <- 11 RR_calf_joint 8 -> -1.8
-               0.1 <- 6 RL_hip_joint 9 -> 0.0
-               1 <- 7 RL_thigh_joint 10 -> 0.9
-               -1.5 <- 8 RL_calf_joint 11 -> -1.8
-        """
+
         default_joint_angles = {
                 'joint_left_leg_1': 0,
                 'joint_right_leg_1': 0,
@@ -100,11 +86,10 @@ class TitaConstraintHimRoughCfg( LeggedRobotCfg ):
             heading = [-3.14, 3.14]
 
     class asset( LeggedRobotCfg.asset ):
-        # file = '{ROOT_DIR}/resources/go2/tita/tita_description.urdf'
 
         file = '{ROOT_DIR}/resources/tita/urdf/tita_description.urdf'
         foot_name = "leg_4"
-        name = "go2"
+        name = "tita"
         penalize_contacts_on = ["leg_3"]
         terminate_after_contacts_on = ["base"]
         self_collisions = 0 # 1 to disable, 0 to enable...bitwise filter
@@ -245,7 +230,7 @@ class TitaConstraintHimRoughCfgPPO( LeggedRobotCfgPPO ):
       
     class runner( LeggedRobotCfgPPO.runner ):
         run_name = 'test_barlowtwins_feetcontact'
-        experiment_name = 'rough_go2_constraint'
+        experiment_name = 'rough_tita_constraint'
         policy_class_name = 'ActorCriticBarlowTwins'
         # policy_class_name = 'ActorCriticTransBarlowTwins'
         runner_class_name = 'OnConstraintPolicyRunner'
