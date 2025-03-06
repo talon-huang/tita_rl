@@ -108,14 +108,17 @@
     ```
     显寸不够会非常卡，看到如下图片，表示程序正常执行，ctrl+c退出
 
-![alt text](picture_video/image-1.png)
-        测试使用的事NVIDIA GeForce RTX 3060，打开图形界面的话，会非常卡，跑一次需要9s，建议关闭图形界面
-![alt text](picture_video/image-2.png)\
-        为了解决显存不足卡顿的问题，我们可以使用--headless参数，这样程序会以命令行的形式运行，不会打开图形界面，这样可以节省显存，提高运行速度
-        python train.py --task=TitaN3poHim --headless
-        迭代时间瞬间缩短到2s，如下图，显卡好一点速度会更快，4090的显卡，迭代时间1s左右
-![alt text](picture_video/image-3.png)
-![alt text](c7f9d78b-e6f7-46a5-b9cc-187ca142d9f5.jpeg)
+    ![alt text](picture_video/image-1.png)
+    测试使用的事NVIDIA GeForce RTX 3060，打开图形界面的话，会非常卡，跑一次需要9s，建议关闭图形界面
+    ![alt text](picture_video/image-2.png)\
+    为了解决显存不足卡顿的问题，我们可以使用--headless参数，这样程序会以命令行的形式运行，不会打开图形界面，这样可以节省显存，提高运行速度
+    
+    ```bash
+    python train.py --task=TitaN3poHim --headless
+    ```
+    迭代时间瞬间缩短到2s，如下图，显卡好一点速度会更快，4090的显卡，迭代时间1s左右
+    ![alt text](picture_video/image-3.png)
+    ![alt text](c7f9d78b-e6f7-46a5-b9cc-187ca142d9f5.jpeg)
 
 四. 测试训练成果
 1. 查看训练成果
