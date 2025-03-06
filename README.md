@@ -116,9 +116,10 @@
     ```bash
     python train.py --task=TitaN3poHim --headless
     ```
-    迭代时间瞬间缩短到2s，如下图，显卡好一点速度会更快，4090的显卡，迭代时间1s左右
-    ![alt text](picture_video/image-3.png)
-    ![alt text](c7f9d78b-e6f7-46a5-b9cc-187ca142d9f5.jpeg)
+    迭代时间瞬间缩短到2s  
+    ![alt text](picture_video/image-3.png)  
+    显卡好一点速度会更快，4090的显卡，迭代时间1s左右  
+    ![alt text](picture_video/c7f9d78b-e6f7-46a5-b9cc-187ca142d9f5.jpeg)
 
 四. 测试训练成果
 1. 查看训练成果
