@@ -17,26 +17,26 @@
 
 1. 安装NVIDIA显卡驱动
 
->>方式1：使用ubuntu软件中心安装驱动  
-    http://www.nvidia.cn/Download/index.aspx?lang=cn
+    方式1：使用ubuntu软件中心安装驱动  
+        http://www.nvidia.cn/Download/index.aspx?lang=cn
 
->>方式2：端中使用apt工具包安装  
-    添加 PPA 源：  
-   ```bash
+    方式2：端中使用apt工具包安装  
+        添加 PPA 源：  
+    ```markdown
     sudo add-apt-repository ppa:graphics-drivers/ppa  
-   ```
+    ``` 
     为系统安装依赖项以构建内核模块： 
-   ```bash 
+    ```bash 
     sudo apt-get install dkms build-essential  
-   ```
+    ```  
     安装NVIDIA驱动  
-   ```bash 
+    ```bash 
     sudo ubuntu-drivers autoinstall  
-   ```
+    ```
     系统会自动安装推荐版本驱动，安装完重启系统  
-   ```bash 
+    ```bash 
     sudo reboot  
-   ```
+    ```
 
 2. 安装anaconda  
     https://www.anaconda.com/download/success  
@@ -54,60 +54,62 @@
 
 二. 测试环境
 
-    1. conda配置虚拟环境
-   ```bash
+1. conda配置虚拟环境
+    ```bash
     conda create -n <your_env_name> python=3.8
-   ```
-        #your_env_name为你的虚拟环境名
-        该环境配置，在你的anaconda安装路径your_path/anaconda3/envs能找到<your_env_name>这个虚拟环境
-    2. 激活环境
-   ```bash
+    ```
+    your_env_name为你的虚拟环境名该环境配置，在你的anaconda安装路径your_path/anaconda3/envs能找到<your_env_name>这个虚拟环境  
+2. 激活环境
+    ```bash
     conda activate your_env_name
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:your_path/anaconda3/envs/your_env_name/lib
-   ```
-        能在终端开头看到<your_env_name>,说明激活成功
+    ```
+    能在终端开头看到<your_env_name>,说明激活成功
 
-    3. 测试conda和issacgym是否安装成功
+3. 测试conda和issacgym是否安装成功
         安装以下包
-   ```bash
-        pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio==0.10.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
-   ```
-        进入isaacgym安装路径
-   ```bash
-        cd 你的路径/isaacgym/python && pip install -e .
-   ```
-        测试
-   ```bash
-        cd examples && python 1080_balls_of_solitude.py
-   ```
-        看到一堆球落到地上表示安装成功，若没有参考第5步的解决方法
+    ```bash
+    pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio==0.10.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
+    ```
+    进入isaacgym安装路径
+    ```bash
+    cd 你的路径/isaacgym/python && pip install -e .  
+    ```
+    测试
+    ```bash
+    cd examples && python 1080_balls_of_solitude.py
+    ```
+    看到一堆球落到地上表示安装成功，若没有参考第4步的解决方法
 
-    4. 可能遇到的问题，“Isaac Gym”没有反应,运行以下两个指令有其它问题查看maybe_problems.md
-   ```bash
-        sudo prime-select nvidia
-        export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json
-   ```
-
-    5. 退出conda环境
-   ```bash
-        conda deactivate
-   ```
+4. 可能遇到的问题，“Isaac Gym”没有反应,运行以下两个指令有其它问题查看maybe_problems.md
+    ```bash
+    sudo prime-select nvidia
+    export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json
+5. 退出conda环境
+    ```bash
+    conda deactivate
+    ```
 
 三. 开始训练
 
-    1. 从github上下载代码
-   ```bash
-        git clone https://github.com/talon-huang/tita_rl.git
-        cd tita_rl
-   ```
-    2. 激活conda环境    
-        conda activate <your_env_name>
-        export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:your path/anaconda3/envs/<your_env_name>/lib
-    3. 运行训练程序
-        python train.py --task=TitaN3poHim
-        显寸不够会非常卡，看到如下图片，表示程序正常执行，ctrl+c退出
+1. 从github上下载代码
+    ```bash
+    git clone https://github.com/talon-huang/tita_rl.git
+    cd tita_rl
+    ```
+2. 激活conda环境   
+    ```bash 
+    conda activate <your_env_name>
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:your path/anaconda3/envs/<your_env_name>/lib
+    ```
+3. 运行训练程序
+    ```bash
+    python train.py --task=TitaN3poHim
+    ```
+    显寸不够会非常卡，看到如下图片，表示程序正常执行，ctrl+c退出
+
 ![alt text](picture_video/image-1.png)
-        测试使用的事NVIDIA GeForce RTX 3060，打开图形界面的话，会非常卡，跑一次需要9s，建议关闭图形界面，使用命令行运行程序
+        测试使用的事NVIDIA GeForce RTX 3060，打开图形界面的话，会非常卡，跑一次需要9s，建议关闭图形界面
 ![alt text](picture_video/image-2.png)\
         为了解决显存不足卡顿的问题，我们可以使用--headless参数，这样程序会以命令行的形式运行，不会打开图形界面，这样可以节省显存，提高运行速度
         python train.py --task=TitaN3poHim --headless
@@ -116,10 +118,14 @@
 ![alt text](c7f9d78b-e6f7-46a5-b9cc-187ca142d9f5.jpeg)
 
 四. 测试训练成果
-    1. 查看训练成果
+1. 查看训练成果
         训练好的文件在tita_rl/logs下，例如model_10000.pt，将它拷贝到tita_rl主目录下，然后运行
-        python simple_play.py --task=TitaN3poHim
-        ![alt text](<picture_video/Peek 2025-03-06 16-44.gif>)
-    2. 将tita_rl主目录下的test.onnx转成model_gn.engine做sim2sim仿真
-        /usr/src/tensorrt/bin/trtexec --onnx=test.onnx --saveEngine=model_gn.engine
+    ```bash
+    python simple_play.py --task=TitaN3poHim
+    ```
+    ![alt text](<picture_video/Peek 2025-03-06 16-44.gif>)
+2. 将tita_rl主目录下的test.onnx转成model_gn.engine做sim2sim仿真
+    ```bash
+    /usr/src/tensorrt/bin/trtexec --onnx=test.onnx --saveEngine=model_gn.engine
+    ```
     
