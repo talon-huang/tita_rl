@@ -2,16 +2,17 @@
 1. Isaac Gym仿真训练  
         将机器人模型导入到Isaac Gym中，进行仿真训练  
 代码仓：https://github.com/talon-huang/tita_rl.git
+![alt text](<pictures_videos/isaac_gym.gif>)
     
 2. sim2sim仿真  
         使用sim2sim仿真，可以更快的检验isaac gym训练成果，为了安全，为了验证程序可行，还有很大程度上排除机器模型一致性问题，sim2sim没有太大的问题就可以开始实机部署  
-    代码仓：https://github.com/talon-huang/tita_webots_ros2.git  
-
+    代码仓：https://github.com/talon-huang/sim2sim2real.git
+![alt text](<pictures_videos/sim_webots.gif>)
 3. sim2real仿真  
         sim2real，是比价复杂比较难的部分，这要求实机模型和仿真模型接近一致，同时对硬件和执行部件电机有较高要求，如果sim2sim的效果还不错可以检查一下  
         电机响应时间，电机力矩大小，电机速度噪声，电机位置准确性还有上层控制带宽（控制频率）这都关乎实机的表现性能。  
-    代码仓：https://github.com/talon-huang/tita_webots_ros2.git  
-
+    代码仓：https://github.com/talon-huang/sim2sim2real.git 
+![alt text](pictures_videos/real_robot.gif)
 
 一. 环境搭建（每个人的环境都不一样，以下尽可能的把注意事项写上，遇到问题可以先问AI，实在不行在Issues上反馈）
 
@@ -108,18 +109,18 @@
     ```
     显寸不够会非常卡，看到如下图片，表示程序正常执行，ctrl+c退出
 
-    ![alt text](picture_video/image-1.png)
+    ![alt text](pictures_videos/image-1.png)
     测试使用的事NVIDIA GeForce RTX 3060，打开图形界面的话，会非常卡，跑一次需要9s，建议关闭图形界面
-    ![alt text](picture_video/image-2.png)\
+    ![alt text](pictures_videos/image-2.png)\
     为了解决显存不足卡顿的问题，我们可以使用--headless参数，这样程序会以命令行的形式运行，不会打开图形界面，这样可以节省显存，提高运行速度
     
     ```bash
     python train.py --task=TitaN3poHim --headless
     ```
     迭代时间瞬间缩短到2s  
-    ![alt text](picture_video/image-3.png)  
+    ![alt text](pictures_videos/image-3.png)  
     显卡好一点速度会更快，4090的显卡，迭代时间1s左右  
-    ![alt text](picture_video/c7f9d78b-e6f7-46a5-b9cc-187ca142d9f5.jpeg)
+    ![alt text](pictures_videos/c7f9d78b-e6f7-46a5-b9cc-187ca142d9f5.jpeg)
 
 四. 测试训练成果
 1. 查看训练成果
@@ -127,9 +128,10 @@
     ```bash
     python simple_play.py --task=TitaN3poHim
     ```
-    ![alt text](<picture_video/Peek 2025-03-06 16-44.gif>)
-2. 将tita_rl主目录下的test.onnx转成model_gn.engine做sim2sim仿真
+    ![alt text](<pictures_videos/Peek 2025-03-06 16-44.gif>)
+2. 将tita_rl主目录下的test.onnx推理转成model_gn.engine做sim2sim仿真
     ```bash
     /usr/src/tensorrt/bin/trtexec --onnx=test.onnx --saveEngine=model_gn.engine
     ```
-    
+    至此，iaacgym仿真和推理部分已经完成，接下来转到sim2sim和sim2real部分。  
+    请参考代码仓：https://github.com/talon-huang/sim2sim2real.git
