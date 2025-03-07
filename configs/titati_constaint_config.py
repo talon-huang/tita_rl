@@ -91,9 +91,8 @@ class TitatiConstraintHimRoughCfg( LeggedRobotCfg ):
     class asset( LeggedRobotCfg.asset ):
         
         file = '{ROOT_DIR}/resources/titati/urdf/titati_description.urdf'
-        # file = '{ROOT_DIR}/resources/go2/a1/urdf/a1.urdf'
         foot_name = "foot"
-        name = "go2"
+        name = "titati"
         penalize_contacts_on = ["thigh", "calf"]
         terminate_after_contacts_on = ["base"]
         self_collisions = 0 # 1 to disable, 0 to enable...bitwise filter
@@ -310,7 +309,7 @@ class TitatiConstraintHimRoughCfgPPO( LeggedRobotCfgPPO ):
       
     class runner( LeggedRobotCfgPPO.runner ):
         run_name = 'test_barlowtwins_feetcontact'
-        experiment_name = 'rough_go2_constraint'
+        experiment_name = 'rough_titati_constraint'
         policy_class_name = 'ActorCriticBarlowTwins'
         # policy_class_name = 'ActorCriticTransBarlowTwins'
         runner_class_name = 'OnConstraintPolicyRunner'
