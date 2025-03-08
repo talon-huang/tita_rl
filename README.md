@@ -1,8 +1,8 @@
 English README.md：be updating...
 
 持续更新中~~~  
-
-有问题在Issues中反馈，欢迎大家一起加入学习。
+![alt text](pictures_videos/output.gif)  
+有问题欢迎在Issues中反馈，欢迎大家一起加入学习。
 
 感谢开源：
 1. https://github.com/zeonsunlightyu/LocomotionWithNP3O.git
