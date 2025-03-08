@@ -129,8 +129,8 @@ def play(args):
 
     video.release()
 if __name__ == '__main__':
-    task_registry.register("TitaN3poHim",LeggedRobot,TitaConstraintHimRoughCfg(),TitaConstraintHimRoughCfgPPO())
-    task_registry.register("TitatiN3po",LeggedRobot,TitatiConstraintHimRoughCfg(),TitatiConstraintHimRoughCfgPPO())
+    task_registry.register("Tita",LeggedRobot,TitaConstraintHimRoughCfg(),TitaConstraintHimRoughCfgPPO())
+    task_registry.register("Titatit",LeggedRobot,TitatiConstraintHimRoughCfg(),TitatiConstraintHimRoughCfgPPO())
 
     RECORD_FRAMES = True
     args = get_args()
