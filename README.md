@@ -64,7 +64,7 @@ English README.md：be updating...
 
 二. 测试环境
 
-#注意不要照抄  
+#注意不要照抄指令  
     <your_env_name>为你的虚拟环境名  
     <your_path>为对应文件路径  
 
@@ -120,7 +120,7 @@ English README.md：be updating...
     ```bash
     python train.py --task=Tita
     ```
-    显寸不够会非常卡，看到如下图片，表示程序正常执行，ctrl+c退出
+    显存不够会非常卡，看到如下图片，表示程序正常执行，ctrl+c退出
 
     ![alt text](pictures_videos/image-1.png)
     测试使用的事NVIDIA GeForce RTX 3060，打开图形界面的话，会非常卡，跑一次需要9s，建议关闭图形界面

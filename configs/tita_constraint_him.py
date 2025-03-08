@@ -233,7 +233,7 @@ class TitaConstraintHimRoughCfgPPO( LeggedRobotCfgPPO ):
         experiment_name = 'flat_tita_constraint'
         policy_class_name = 'ActorCriticRMA'
         runner_class_name = 'OnConstraintPolicyRunner'
-        algorithm_class_name = 'NP3O'
+        algorithm_class_name = 'PPO'
         max_iterations = 10000
         num_steps_per_env = 24
         resume = False
