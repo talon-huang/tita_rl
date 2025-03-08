@@ -1,3 +1,12 @@
+English README.md：be updating...
+
+持续更新中~~~  
+
+有问题在Issues中反馈，欢迎大家一起加入学习。
+
+感谢开源：
+1. https://github.com/zeonsunlightyu/LocomotionWithNP3O.git
+
 本次开源有三部分，分别是：  
 1. Isaac Gym仿真训练  
         将机器人模型导入到Isaac Gym中，进行仿真训练  
@@ -9,12 +18,12 @@
     代码仓：https://github.com/talon-huang/sim2sim2real.git
 ![alt text](<pictures_videos/sim_webots.gif>)
 3. sim2real仿真  
-        sim2real，是比价复杂比较难的部分，这要求实机模型和仿真模型接近一致，同时对硬件和执行部件电机有较高要求，如果sim2sim的效果还不错可以检查一下  
+        sim2real，是比较复杂比较难的部分，这要求实机模型和仿真模型接近一致，同时对硬件和执行部件电机有较高要求，如果sim2sim的效果还不错可以检查一下  
         电机响应时间，电机力矩大小，电机速度噪声，电机位置准确性还有上层控制带宽（控制频率）这都关乎实机的表现性能。  
     代码仓：https://github.com/talon-huang/sim2sim2real.git 
 ![alt text](pictures_videos/real_robot.gif)
 
-一. 环境搭建（每个人的环境都不一样，以下尽可能的把注意事项写上，遇到问题可以先问AI，实在不行在Issues上反馈）
+一. 环境搭建（每个人的环境都不一样，以下尽可能的把注意事项写上，遇到问题可以先问AI，也可以查看maybe_problems.md文件，实在不行在Issues上反馈）
 
 1. 安装NVIDIA显卡驱动
 
@@ -55,15 +64,19 @@
 
 二. 测试环境
 
+#注意不要照抄  
+    <your_env_name>为你的虚拟环境名  
+    <your_path>为对应文件路径  
+
 1. conda配置虚拟环境
     ```bash
     conda create -n <your_env_name> python=3.8
     ```
-    your_env_name为你的虚拟环境名该环境配置，在你的anaconda安装路径your_path/anaconda3/envs能找到<your_env_name>这个虚拟环境  
+    <your_env_name>为你的虚拟环境名该环境配置，在你的anaconda安装路径<your_path>/anaconda3/envs能找到<your_env_name>这个虚拟环境  
 2. 激活环境
     ```bash
-    conda activate your_env_name
-    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:your_path/anaconda3/envs/your_env_name/lib
+    conda activate <your_env_name>
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:<your_path>/anaconda3/envs/<your_env_name>/lib
     ```
     能在终端开头看到<your_env_name>,说明激活成功
 
@@ -124,11 +137,11 @@
 
 四. 测试训练成果
 1. 查看训练成果
-        训练好的文件在tita_rl/logs下，例如model_10000.pt，将它拷贝到tita_rl主目录下，然后运行
+        训练好的文件在tita_rl/logs下，例如model_10000.pt，将它拷贝到tita_rl主目录下，然后运行能看到
     ```bash
     python simple_play.py --task=Tita
     ```
-    ![alt text](<pictures_videos/Peek 2025-03-06 16-44.gif>)
+    ![alt text](<pictures_videos/isaac_gym.gif>)
 2. 将tita_rl主目录下的test.onnx推理转成model_gn.engine做sim2sim仿真
     ```bash
     /usr/src/tensorrt/bin/trtexec --onnx=test.onnx --saveEngine=model_gn.engine

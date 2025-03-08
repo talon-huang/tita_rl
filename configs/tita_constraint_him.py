@@ -93,7 +93,7 @@ class TitaConstraintHimRoughCfg( LeggedRobotCfg ):
         penalize_contacts_on = ["leg_3"]
         terminate_after_contacts_on = ["base"]
         self_collisions = 0 # 1 to disable, 0 to enable...bitwise filter
-        flip_visual_attachments = True
+        flip_visual_attachments = False
   
     class rewards( LeggedRobotCfg.rewards ):
         soft_dof_pos_limit = 0.9
@@ -231,8 +231,7 @@ class TitaConstraintHimRoughCfgPPO( LeggedRobotCfgPPO ):
     class runner( LeggedRobotCfgPPO.runner ):
         run_name = 'test_barlowtwins_feetcontact'
         experiment_name = 'flat_tita_constraint'
-        policy_class_name = 'ActorCriticBarlowTwins'
-        # policy_class_name = 'ActorCriticTransBarlowTwins'
+        policy_class_name = 'ActorCriticRMA'
         runner_class_name = 'OnConstraintPolicyRunner'
         algorithm_class_name = 'NP3O'
         max_iterations = 10000
