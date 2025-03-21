@@ -1,7 +1,7 @@
 *.pyc
 logs/
-# *.pt
-# *.mp4
+*.pt
+*.mp4
 *.json
 *.engine
 *.onnx

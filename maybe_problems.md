@@ -41,3 +41,12 @@ ModuleNotFoundError: No module named 'onnx'
 ```
 pip install onnx
 ```
+
+### 报错4
+```
+ModuleNotFoundError: No module named 'onnx'
+```
+```
+pip uninstall setuptools
+conda install setuptools==58.0.4
+```

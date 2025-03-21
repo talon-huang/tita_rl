@@ -1,4 +1,3 @@
-from configs.tita_constraint_him import TitaConstraintHimRoughCfg, TitaConstraintHimRoughCfgPPO
 from configs.titati_constaint_config import TitatiConstraintHimRoughCfg, TitatiConstraintHimRoughCfgPPO
 
 import cv2
@@ -31,7 +30,7 @@ def delete_files_in_directory(directory_path):
 def play(args):
     env_cfg, train_cfg = task_registry.get_cfgs(name=args.task)
     # override some parameters for testing
-    env_cfg.env.num_envs = min(env_cfg.env.num_envs, 100)
+    env_cfg.env.num_envs = min(env_cfg.env.num_envs, 20)
     env_cfg.terrain.num_rows = 5
     env_cfg.terrain.num_cols = 5
     env_cfg.terrain.curriculum = False
@@ -129,8 +128,7 @@ def play(args):
 
     video.release()
 if __name__ == '__main__':
-    task_registry.register("TitaN3poHim",LeggedRobot,TitaConstraintHimRoughCfg(),TitaConstraintHimRoughCfgPPO())
-    task_registry.register("TitatiN3po",LeggedRobot,TitatiConstraintHimRoughCfg(),TitatiConstraintHimRoughCfgPPO())
+    task_registry.register("Titatit",LeggedRobot,TitatiConstraintHimRoughCfg(),TitatiConstraintHimRoughCfgPPO())
 
     RECORD_FRAMES = True
     args = get_args()

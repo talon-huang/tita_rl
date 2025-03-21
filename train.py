@@ -1,7 +1,6 @@
 import numpy as np
 import os
 from datetime import datetime
-from configs.tita_constraint_him import TitaConstraintHimRoughCfg, TitaConstraintHimRoughCfgPPO
 from configs.titati_constaint_config import TitatiConstraintHimRoughCfg, TitatiConstraintHimRoughCfgPPO
 
 
@@ -17,8 +16,7 @@ def train(args):
 
 if __name__ == '__main__':
 
-    task_registry.register("TitaN3poHim",LeggedRobot,TitaConstraintHimRoughCfg(),TitaConstraintHimRoughCfgPPO())
-    task_registry.register("TitatiN3po",LeggedRobot,TitatiConstraintHimRoughCfg(),TitatiConstraintHimRoughCfgPPO())
+    task_registry.register("Titatit",LeggedRobot,TitatiConstraintHimRoughCfg(),TitatiConstraintHimRoughCfgPPO())
 
     args = get_args()
     train(args)
