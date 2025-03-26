@@ -83,10 +83,10 @@ class TitatiConstraintHimRoughCfg( LeggedRobotCfg ):
         global_reference = False
 
         class ranges:
-            lin_vel_x = [-0.5, 0.5]  # min max [m/s]
-            lin_vel_y = [-0.5, 0.5]  # min max [m/s]
-            ang_vel_yaw = [-0.5, 0.5]  # min max [rad/s]
-            heading = [-1.57, 1.57]
+            lin_vel_x = [-1.0, 1.0]  # min max [m/s]
+            lin_vel_y = [-1.0, 1.0]  # min max [m/s]
+            ang_vel_yaw = [-1, 1]  # min max [rad/s]
+            heading = [-3.14, 3.14]
 
     class asset( LeggedRobotCfg.asset ):
         
