@@ -90,7 +90,7 @@ class TitatiConstraintHimRoughCfg( LeggedRobotCfg ):
 
     class asset( LeggedRobotCfg.asset ):
         
-        file = '{ROOT_DIR}/resources/titati/urdf/titati_description.urdf'
+        file = '{ROOT_DIR}/resources/a1/urdf/a1.urdf'
         foot_name = "foot"
         name = "titati"
         penalize_contacts_on = ["thigh", "calf"]
@@ -122,8 +122,8 @@ class TitatiConstraintHimRoughCfg( LeggedRobotCfg ):
             torques = 0.0
             powers = -2e-5
             termination = 0.0
-            tracking_lin_vel = 1.0
-            tracking_ang_vel = 0.5
+            tracking_lin_vel = 0.5
+            tracking_ang_vel = 0.25
             lin_vel_z = -2.0
             ang_vel_xy = -0.05
             dof_vel = 0.0
